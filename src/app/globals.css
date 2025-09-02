@@ -130,3 +130,37 @@
   @apply !border !bg-background !shadow-xs hover:!bg-accent !text-accent-foreground hover:!text-accent-foreground dark:!bg-input/30 !border-input/10 dark:!border-input dark:hover:!bg-input/50;
   @apply !px-2 !py-[6px] !rounded-md !text-sm !font-semibold !shadow-sm !transition-all;
 }
+
+.roboto-regular {
+  font-family: "Roboto", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+  font-variation-settings: "wdth" 100;
+}
+
+.story-script-regular {
+  font-family: "Story Script", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.epunda-slab-regular {
+  font-family: "Epunda Slab", serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+}
+/* Add these classes to your existing globals.css file */
+
+.abril-fatface-regular {
+  font-family: var(--font-abril-fatface), serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.story-script-regular {
+  font-family: var(--font-kalam), cursive;
+  font-weight: 400;
+  font-style: normal;
+}

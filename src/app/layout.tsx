@@ -2,6 +2,7 @@ import type { Metadata } from 'next'
 import './globals.css'
 import { AppProviders } from '@/components/app-providers'
 import { AppLayout } from '@/components/app-layout'
+import { Inter, Abril_Fatface, Kalam } from 'next/font/google'
 import React from 'react'
 
 export const metadata: Metadata = {
@@ -16,10 +17,22 @@ const links: { label: string; path: string }[] = [
   { label: 'Basic Program', path: '/basic' },
 ]
 
+const inter = Inter({ subsets: ['latin'] })
+const abrilFatface = Abril_Fatface({ 
+  weight: '400',
+  subsets: ['latin'],
+  variable: '--font-abril-fatface'
+})
+const kalam = Kalam({
+  weight: ['400'],
+  subsets: ['latin'],
+  variable: '--font-kalam'
+})
+
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
   return (
-    <html lang="en" suppressHydrationWarning>
-      <body className={`antialiased`}>
+    <html lang="en" className={`${abrilFatface.variable} ${kalam.variable}`} suppressHydrationWarning>
+      <body className={`${inter.className} antialiased`}>
         <AppProviders>
           <AppLayout links={links}>{children}</AppLayout>
         </AppProviders>
@@ -27,6 +40,7 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
     </html>
   )
 }
+
 // Patch BigInt so we can log it using JSON.stringify without any errors
 declare global {
   interface BigInt {
